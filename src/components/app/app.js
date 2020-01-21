@@ -17,7 +17,8 @@ export default class app extends Component {
           {label: 'Alex', id:5, score:"5"},
           {label: 'Mark', id:6, score:"3"},
           {label: 'Both', id:7, score:"4"},
-          {label: 'Test', id:3, score:"5"}
+          {label: 'John', id:3, score:"5"},
+          {label: 'Doe', id:11, score:"2"}
         ]
       };
 
@@ -63,11 +64,6 @@ export default class app extends Component {
       editItem = (id) => {
         alert("ok we test " + id)
       }
-
-    
-
-
-
 
 
     render(){

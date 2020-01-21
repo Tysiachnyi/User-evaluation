@@ -16,7 +16,7 @@ const Navbar = ({navbarTitle}) => {
            
 <header>
     <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <a className="navbar-brand" href="#"> [Tysiachnyi] </a>
+        <a className="navbar-brand" href="#"> [User evaluation] </a>
         <button className="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
