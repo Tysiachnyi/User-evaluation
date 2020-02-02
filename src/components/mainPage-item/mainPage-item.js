@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const MainPageItems = ({label, department, id, score, onDeleted, onEdit}) => {
+const MainPageItems = ({label, department, id, score, onDeleted, editItem}) => {
     return(
         
     <tr>
@@ -18,7 +18,7 @@ const MainPageItems = ({label, department, id, score, onDeleted, onEdit}) => {
             <button 
             type="button" 
             className="btn btn-outline-success btn-sm"
-            onClick={onEdit}
+            onClick={editItem}
             >
                 <i className="fa fa-pencil"/>
             </button>

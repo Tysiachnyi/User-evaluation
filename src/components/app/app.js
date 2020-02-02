@@ -70,9 +70,47 @@ export default class app extends Component {
 
       };
 
+    toggleProperty(arr,id,propName,newValue){
+
+        const idx = arr.findIndex((el)=>el.id === id );
+        // 1.
+        const oldItem = arr[idx];
+        const newItem = {...oldItem,
+            [propName]:newValue};
+        // 2.
+        return [
+            ...arr.slice(0, idx),
+            newItem,
+            ...arr.slice(idx + 1)
+        ];
+
+    };
+
       editItem = (id) => {
-        alert("ok we test " + id)
-      }
+          const userChoise = prompt("What you want change? Score or Department")
+          if(userChoise.toLowerCase() == "score"){
+              const newValue = prompt(`Please write new value for ${userChoise.toLowerCase()}`)
+              this.setState(({user})=>{
+                  return{
+                      user:this.toggleProperty(user,id,'score',newValue)
+                  }
+
+              });
+          }
+          else if (userChoise.toLowerCase() == "department"){
+              const newValue = prompt(`Please write new value for ${userChoise.toLowerCase()}`)
+              this.setState(({user})=>{
+                  return{
+                      user:this.toggleProperty(user,id,'department',newValue)
+                  }
+
+              });
+          }
+          else{
+              alert("we have some trouble")
+          }
+
+      };
 
 
     render(){
@@ -83,7 +121,7 @@ export default class app extends Component {
                 <MainPage
                 userInfo={this.state.user}
                 onDeleted={ this.deleteItem}
-                onEdit={this.editItem}/>
+                editItem={this.editItem}/>
                 <ItemAddForm
                 onItemAdded={this.addItem}/>
                 <Footer/>
