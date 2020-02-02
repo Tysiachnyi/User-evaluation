@@ -1,12 +1,15 @@
 import React from 'react';
 
 
-const MainPageItems = ({label, id, score, onDeleted, onEdit}) => {
+const MainPageItems = ({label, department, id, score, onDeleted, onEdit}) => {
     return(
         
     <tr>
         <td scope="row">
             {label}
+        </td>
+        <td>
+            {department}
         </td>
         <td>
             {score}

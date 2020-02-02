@@ -14,13 +14,21 @@ export default class app extends Component {
          
         ],
         user:[
-          {label: 'Alex', id:5, score:"5"},
-          {label: 'Mark', id:6, score:"3"},
-          {label: 'Both', id:7, score:"4"},
-          {label: 'John', id:3, score:"5"},
-          {label: 'Doe', id:11, score:"2"}
+            this.createUserItem('Mark','IT',3),
+            this.createUserItem('David','IT',5),
+            this.createUserItem('Helena','Marketing',5),
+            this.createUserItem('Anna','Marketing',4),
         ]
       };
+
+    createUserItem(label,department,score){
+        return{
+            label:label,
+            department:department,
+            id: this.maxId++,
+            score: score
+        }
+    }
 
       deleteItem = (id) => {
 
@@ -40,11 +48,12 @@ export default class app extends Component {
         });
       };
 
-      addItem = (text, score) => {
+      addItem = (text,department, score) => {
         const newItem = {
-          label: text,
-          score: score,
-          id: this.maxId++
+            label: text,
+            department:department,
+            score: score,
+            id: this.maxId++
         };
 
         this.setState(({user}) => {

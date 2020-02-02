@@ -6,10 +6,11 @@ const MainPage = ({userInfo, onDeleted, onEdit}) => {
         return(
             <tbody key={item.id} id="tableBody">
             <MainPageItems label={item.label}
-             id={item.id} 
-             score={item.score} 
-             onDeleted={() => onDeleted(item.id)}
-             onEdit={() => onEdit(item.id)}/>
+                           department={item.department}
+                           id={item.id}
+                           score={item.score}
+                           onDeleted={() => onDeleted(item.id)}
+                           onEdit={() => onEdit(item.id)}/>
              
             </tbody>
         )
@@ -21,8 +22,9 @@ const MainPage = ({userInfo, onDeleted, onEdit}) => {
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Department</th>
                     <th>Score</th>
-                    <th></th>
+                    <th> </th>
                 </tr>
             </thead>
             {elements}
